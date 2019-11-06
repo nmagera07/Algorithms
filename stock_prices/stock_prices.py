@@ -3,7 +3,17 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  profits = []
+
+  for i in prices:
+      price_index = prices.index(i)
+        
+      for j in range(price_index + 1, len(prices)):
+        
+          price_difference = prices[j] - prices[price_index]
+
+          profits.append(price_difference)
+  return max(profits)
 
 
 if __name__ == '__main__':
